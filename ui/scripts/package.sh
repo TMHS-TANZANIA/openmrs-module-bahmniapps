@@ -16,18 +16,18 @@ yarn uglify-and-rename
 
 cd $ROOT_DIR
 
-if [ $(pgrep Xvfb) ]; then
-    XVFB_PID=$(pgrep Xvfb)
-    echo "Killing Xvfb process $XVFB_PID"
-    /usr/bin/sudo kill $XVFB_PID
-    /usr/bin/sudo rm -rf /tmp/.X99-lock
-fi
-export DISPLAY=:99
-Xvfb :99 &
-XVFB_PID=$!
-echo "Starting Xvfb process $XVFB_PID"
+# if [ $(pgrep Xvfb) ]; then
+#     XVFB_PID=$(pgrep Xvfb)
+#     echo "Killing Xvfb process $XVFB_PID"
+#     /usr/bin/sudo kill $XVFB_PID
+#     /usr/bin/sudo rm -rf /tmp/.X99-lock
+# fi
+# export DISPLAY=:99
+# Xvfb :99 &
+# XVFB_PID=$!
+# echo "Starting Xvfb process $XVFB_PID"
 
-yarn web
+# yarn web
 cd dist && zip -r ../target/${ZIP_FILE_NAME}.zip *
 
 
