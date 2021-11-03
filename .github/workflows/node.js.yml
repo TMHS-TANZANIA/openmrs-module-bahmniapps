@@ -32,6 +32,7 @@ jobs:
     - run: |
           pwd
           yarn install
+          yarn add grunt-cli
           cd ui && yarn ci
           pwd
 #     - run: 
